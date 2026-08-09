@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b51d24">
+  <meta name="description" content="Ponto da Esfiha Itapevi — esfihas, pizzas, lanches e muito mais na Cidade da Saúde.">
+  <title>Ponto da Esfiha Itapevi</title>
+  
+  <!-- Fontes e Estilos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Overlay para fechar carrinho e menu ao clicar fora -->
+  <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="container nav" id="navContainer">
+      <a class="brand" href="#inicio" aria-label="Ponto da Esfiha - Página Inicial">
+        <span class="brand-logo" aria-hidden="true">🍕</span>
+        <div>
+          <strong>Ponto da Esfiha</strong>
+          <small>Itapevi</small>
+        </div>
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="nav">
+        <a href="#inicio">Início</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a class="nav-order" href="#cardapio">Fazer pedido</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="badge">★ 4,1 · 922 avaliações</div>
+        <h1>O sabor que<br><span>Itapevi conhece.</span></h1>
+        <p>Esfihas artesanais, pizzas crocantes e lanches saborosos preparados para transformar a sua refeição.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#cardapio">Ver cardápio</a>
+          <a class="btn light" href="tel:+551141424258">📞 Ligar agora</a>
+        </div>
+        <div class="quick-info">
+          <span>🛵 Entrega rápida</span>
+          <span>🥡 Para viagem</span>
+          <span>🍽️ Refeição no local</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlights container" aria-label="Informações rápidas">
+      <div class="highlight-item">
+        <b>R$ 20–40</b>
+        <span>Faixa por pessoa</span>
+      </div>
+      <div class="highlight-item">
+        <b>Até 00:00</b>
+        <span>Aberto diariamente</span>
+      </div>
+      <div class="highlight-item">
+        <b>4,1 ★</b>
+        <span>922 avaliações</span>
+      </div>
+      <div class="highlight-item">
+        <b>Itapevi</b>
+        <span>Cidade da Saúde</span>
+      </div>
+    </section>
+
+    <section id="cardapio" class="section container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">ESCOLHA SEU FAVORITO</span>
+          <h2>Nosso cardápio</h2>
+        </div>
+        <div class="search">
+          <span aria-hidden="true">🔍</span>
+          <input id="search" type="search" placeholder="Buscar no cardápio..." aria-label="Buscar item no cardápio">
+        </div>
+      </div>
+
+      <div class="categories" id="categories" role="tablist" aria-label="Categorias do cardápio"></div>
+      <div class="menu-grid" id="menu" role="region" aria-live="polite"></div>
+    </section>
+
+    <section id="sobre" class="about">
+      <div class="container about-grid">
+        <div class="about-card">
+          <span class="eyebrow">PONTO DA ESFIHA</span>
+          <h2>Seu ponto para matar a fome.</h2>
+          <p>Localizado na Cidade da Saúde, em Itapevi, o Ponto da Esfiha reúne tradição, ingredientes selecionados e o carinho no preparo de esfihas, pizzas e lanches para todos os momentos.</p>
+          <div class="features">
+            <span>✓ Produtos variados</span>
+            <span>✓ Atendimento local</span>
+            <span>✓ Opções para viagem</span>
+            <span>✓ Entrega ágil</span>
+          </div>
+        </div>
+
+        <div class="location-card">
+          <div class="map-placeholder">
+            <div aria-hidden="true">📍</div>
+            <strong>Cidade da Saúde · Itapevi</strong>
+            <small>R. Agostinho Ferreira Campos, 574</small>
+          </div>
+          <a class="map-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Ponto+da+Esfiha+Itapevi">
+            Abrir no Google Maps →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="avaliacoes" class="section container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">O QUE DIZEM NOSSOS CLIENTES</span>
+          <h2>Avaliações</h2>
+        </div>
+        <div class="rating">
+          <strong>4,1</strong>
+          <div>
+            <div class="stars" aria-label="Avaliação 4.1 de 5 estrelas">★★★★★</div>
+            <small>922 avaliações no Google</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews">
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <h3>Carla Lima</h3>
+          <p>“Muito bem atendida! A pizza estava maravilhosa e quentinha.”</p>
+          <small>4 semanas atrás</small>
+        </article>
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <h3>Marcos Silva</h3>
+          <p>“Esfihas super recheadas e massa leve. Entrega rápida no meu bairro.”</p>
+          <small>2 meses atrás</small>
+        </article>
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <h3>Fernanda Souza</h3>
+          <p>“Melhor ponto da esfiha da região. Atendimento excelente no local!”</p>
+          <small>3 meses atrás</small>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato" class="contact">
+      <div class="container contact-grid">
+        <div>
+          <span class="eyebrow">FALE CONOSCO</span>
+          <h2>Peça ou venha nos visitar.</h2>
+          <p>Estamos prontos para te atender. Faça seu pedido online ou visite nossa loja física na Cidade da Saúde em Itapevi - SP.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="contact-item" href="tel:+551141424258">
+            <b>📞 (11) 4142-4258</b>
+            <span>Ligar para a loja</span>
+          </a>
+          <a class="contact-item" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=R.+Agostinho+Ferreira+Campos,+574,+Itapevi,+SP">
+            <b>📍 Como chegar</b>
+            <span>R. Agostinho Ferreira Campos, 574</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart" id="cart" aria-label="Carrinho de compras">
+    <div class="cart-head">
+      <strong>Seu Pedido</strong>
+      <button id="closeCart" aria-label="Fechar carrinho">&times;</button>
+    </div>
+    
+    <div class="cart-body" id="cartItems"></div>
+    
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <strong id="total">R$ 0,00</strong>
+      </div>
+      <button class="checkout" id="checkout">Finalizar pelo WhatsApp 📲</button>
+    </div>
+  </aside>
+
+  <button class="floating-cart" id="openCart" aria-label="Abrir carrinho de compras">
+    🛒 <span id="cartCount">0</span>
+  </button>
+
+  <footer>
+    <div class="container footer-content">
+      <strong>Ponto da Esfiha Itapevi</strong>
+      <span>R. Agostinho Ferreira Campos, 574 · Itapevi - SP</span>
+      <span>© 2026 Ponto da Esfiha. Todos os direitos reservados.</span>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
