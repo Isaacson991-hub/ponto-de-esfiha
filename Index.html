@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Um pouquinho mais sobre você, Isabelly 💕</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --pink: #f48fb1;
+    --pink-dark: #c2185b;
+    --pink-light: #fce4ec;
+    --purple: #ce93d8;
+    --purple-light: #f3e5f5;
+    --text: #5d4e6d;
+    --muted: #8b7b99;
+    --white: rgba(255,255,255,.95);
+    --gradient: linear-gradient(135deg,#fce4ec,#f3e5f5 55%,#e1bee7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Poppins, sans-serif;
+    color: var(--text);
+    background: var(--gradient);
+    overflow-x: hidden;
+}
+
+button,
+textarea,
+input {
+    font-family: inherit;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(12px);
+    opacity: .28;
+    animation: blobMove 12s infinite alternate ease-in-out;
+}
+
+.blob.one {
+    width: 220px;
+    height: 220px;
+    background: #f8bbd0;
+    top: -70px;
+    left: -80px;
+}
+
+.blob.two {
+    width: 260px;
+    height: 260px;
+    background: #ce93d8;
+    right: -100px;
+    bottom: -80px;
+    animation-delay: -4s;
+}
+
+.blob.three {
+    width: 150px;
+    height: 150px;
+    background: #f48fb1;
+    right: 15%;
+    top: 30%;
+    animation-delay: -7s;
+}
+
+@keyframes blobMove {
+    from {
+        transform: translate(0,0) scale(1);
+    }
+
+    to {
+        transform: translate(35px,-25px) scale(1.12);
+    }
+}
+
+.hearts {
+    position: absolute;
+    inset: 0;
+}
+
+.heart {
+    position: absolute;
+    opacity: .16;
+    animation: floatHeart linear infinite;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .18;
+    }
+
+    50% {
+        transform: translateY(-45px) rotate(10deg);
+    }
+
+    100% {
+        transform: translateY(-100px) rotate(-8deg);
+        opacity: 0;
+    }
+}
+
+.app {
+    position: relative;
+    z-index: 2;
+    width: min(100%,520px);
+    min-height: 100vh;
+    margin: auto;
+    padding: 20px 15px 40px;
+    display: flex;
+    align-items: center;
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    animation: screenIn .5s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes screenIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    padding: 32px 24px;
+    border-radius: 32px;
+    background: var(--white);
+    border: 1px solid rgba(255,255,255,.8);
+    box-shadow: 0 20px 60px rgba(194,24,91,.16);
+    backdrop-filter: blur(18px);
+}
+
+.logo {
+    text-align: center;
+    font-size: 3.2rem;
+    margin-bottom: 8px;
+    animation: heartbeat 2.3s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    8% {
+        transform: scale(1.08);
+    }
+
+    16% {
+        transform: scale(1);
+    }
+
+    24% {
+        transform: scale(1.07);
+    }
+
+    32% {
+        transform: scale(1);
+    }
+}
+
+.kicker {
+    text-align: center;
+    color: var(--pink-dark);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--pink-dark);
+    margin-bottom: 18px;
+}
+
+.intro {
+    text-align: center;
+    color: var(--muted);
+    font-size: .92rem;
+    line-height: 1.75;
+    margin-bottom: 22px;
+}
+
+.note {
+    display: flex;
+    gap: 10px;
+    padding: 13px;
+    border-radius: 17px;
+    background: rgba(252,228,236,.7);
+    font-size: .76rem;
+    line-height: 1.5;
+    color: var(--muted);
+    margin-bottom: 22px;
+}
+
+.btn {
+    width: 100%;
+    min-height: 54px;
+    border: 0;
+    border-radius: 50px;
+    padding: 14px 20px;
+    font-size: .97rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.btn-primary {
+    color: white;
+    background: linear-gradient(135deg,var(--pink),var(--purple));
+    box-shadow: 0 9px 25px rgba(244,143,177,.32);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    margin-top: 11px;
+    color: var(--pink-dark);
+    background: var(--purple-light);
+}
+
+.quiz-top {
+    margin-bottom: 24px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 9px;
+    font-size: .73rem;
+    color: var(--muted);
+}
+
+.progress-info strong {
+    color: var(--pink-dark);
+}
+
+.progress {
+    height: 7px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--pink-light);
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg,var(--pink),var(--purple));
+    transition: width .45s ease;
+}
+
+.question-number {
+    text-align: center;
+    font-size: .74rem;
+    color: var(--pink-dark);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.question {
+    text-align: center;
+    font-size: 1.18rem;
+    line-height: 1.45;
+    color: #ad1457;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+.options {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.option {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid transparent;
+    border-radius: 17px;
+    background: var(--pink-light);
+    color: var(--text);
+    text-align: left;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: .22s ease;
+}
+
+.option:hover {
+    transform: translateX(3px);
+    background: #f8bbd0;
+}
+
+.option.selected {
+    color: white;
+    background: linear-gradient(135deg,var(--pink),var(--purple));
+    box-shadow: 0 6px 18px rgba(244,143,177,.28);
+}
+
+.text-input {
+    display: block;
+    width: 100%;
+    min-height: 125px;
+    resize: vertical;
+    outline: none;
+    padding: 15px;
+    border: 2px solid var(--pink-light);
+    border-radius: 17px;
+    background: white;
+    color: var(--text);
+    font-size: .9rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.text-input:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 4px rgba(244,143,177,.12);
+}
+
+.custom-answer {
+    margin-top: -5px;
+    margin-bottom: 17px;
+    animation: customIn .3s ease;
+}
+
+@keyframes customIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.custom-label {
+    display: block;
+    color: var(--pink-dark);
+    font-size: .76rem;
+    font-weight: 600;
+    margin: 0 0 7px 4px;
+}
+
+.custom-input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #f8bbd0;
+    border-radius: 15px;
+    outline: none;
+    color: var(--text);
+    background: white;
+    font-size: .9rem;
+}
+
+.custom-input:focus {
+    border-color: var(--pink);
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 10px;
+}
+
+.btn-back {
+    background: var(--purple-light);
+    color: var(--text);
+    box-shadow: none;
+}
+
+.required {
+    text-align: center;
+    font-size: .7rem;
+    color: var(--muted);
+    margin-top: 9px;
+}
+
+.final-icon {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 7px;
+}
+
+.final-title {
+    font-family: "Dancing Script",cursive;
+    color: var(--pink-dark);
+    text-align: center;
+    font-size: 2.15rem;
+    margin-bottom: 8px;
+}
+
+.final-subtitle {
+    color: var(--muted);
+    text-align: center;
+    font-size: .88rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.phrase {
+    padding: 15px;
+    border-radius: 17px;
+    background: var(--purple-light);
+    color: #8e24aa;
+    text-align: center;
+    font-size: .87rem;
+    font-style: italic;
+    line-height: 1.55;
+    margin-bottom: 20px;
+}
+
+.summary {
+    max-height: 340px;
+    overflow-y: auto;
+    padding: 15px;
+    border-radius: 19px;
+    background: rgba(252,228,236,.65);
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    padding-bottom: 13px;
+    margin-bottom: 13px;
+    border-bottom: 1px dashed rgba(244,143,177,.4);
+}
+
+.summary-item:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.summary-q {
+    color: var(--muted);
+    font-size: .72rem;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.summary-a {
+    color: var(--text);
+    font-size: .88rem;
+    line-height: 1.5;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.whatsapp-info {
+    text-align: center;
+    color: var(--muted);
+    font-size: .7rem;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.confetti {
+    position: fixed;
+    z-index: 10;
+    pointer-events: none;
+    animation: confettiFall 2.8s ease-out forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-20px) rotate(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.shake {
+    animation: shake .4s ease;
+}
+
+@keyframes shake {
+
+    0%,100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-6px);
+    }
+
+    40% {
+        transform: translateX(6px);
+    }
+
+    60% {
+        transform: translateX(-5px);
+    }
+
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+.footer {
+    text-align: center;
+    color: var(--muted);
+    opacity: .7;
+    font-size: .7rem;
+    margin-top: 15px;
+}
+
+@media(max-width:390px) {
+
+    .app {
+        padding: 15px 10px 25px;
+    }
+
+    .card {
+        padding: 27px 18px;
+        border-radius: 27px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .question {
+        font-size: 1.08rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="blob one"></div>
+    <div class="blob two"></div>
+    <div class="blob three"></div>
+
+    <div class="hearts" id="hearts"></div>
+
+</div>
+
+
+<main class="app">
+
+<!-- =====================================================
+     INÍCIO
+===================================================== -->
+
+<section class="screen active" id="startScreen">
+
+<div class="card">
+
+    <div class="logo">💕</div>
+
+    <div class="kicker">
+        um pequeno convite
+    </div>
+
+    <h1>
+        Quero conhecer um pouquinho mais de você, Isabelly
+    </h1>
+
+    <p class="intro">
+
+        Preparei algumas perguntinhas para descobrir
+        seus gostos, seus sonhos, suas preferências
+        e algumas pequenas coisas que fazem você ser você.
+
+        Sem pressão. Só curiosidade e carinho. ✨
+
+    </p>
+
+    <div class="note">
+
+        <span>🔒</span>
+
+        <div>
+            Você escolhe o que responder.
+            Nada é enviado automaticamente.
+            No final, você poderá revisar tudo antes
+            de decidir se quer compartilhar.
+        </div>
+
+    </div>
+
+    <button
+        class="btn btn-primary"
+        onclick="startQuiz()">
+
+        Começar 💗
+
+    </button>
+
+</div>
+
+<div class="footer">
+    feito com carinho ✨
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<section class="screen" id="quizScreen">
+
+<div class="card">
+
+    <div class="quiz-top">
+
+        <div class="progress-info">
+
+            <span id="progressLabel">
+                Pergunta 1 de 24
+            </span>
+
+            <strong id="progressPercent">
+                4%
+            </strong>
+
+        </div>
+
+        <div class="progress">
+
+            <div
+                class="progress-fill"
+                id="progressFill">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="question-number"
+        id="questionNumber">
+        01
+    </div>
+
+
+    <div
+        class="question"
+        id="questionTitle">
+    </div>
+
+
+    <div id="questionContent"></div>
+
+
+    <div class="nav">
+
+        <button
+            class="btn btn-back"
+            id="btnBack"
+            onclick="prevQuestion()">
+
+            ← Voltar
+
+        </button>
+
+        <button
+            class="btn btn-primary"
+            id="btnNext"
+            onclick="nextQuestion()">
+
+            Próxima 💕
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="required"
+        id="requiredText">
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="screen" id="finalScreen">
+
+<div class="card">
+
+    <div class="final-icon">
+        ✨
+    </div>
+
+    <h2 class="final-title">
+        Prontinho! 💕
+    </h2>
+
+    <p class="final-subtitle">
+
+        Agora tem um pouquinho mais do seu mundo aqui.
+        Confira suas respostas e, se quiser,
+        compartilhe comigo.
+
+    </p>
+
+
+    <div
+        class="phrase"
+        id="randomPhrase">
+    </div>
+
+
+    <div
+        class="summary"
+        id="summaryBox">
+    </div>
+
+
+    <button
+        class="btn btn-primary"
+        onclick="sendToWhatsApp()">
+
+        Compartilhar pelo WhatsApp 💌
+
+    </button>
+
+
+    <div class="whatsapp-info">
+
+        O WhatsApp será aberto com a mensagem preenchida.
+        Você decide se quer enviá-la.
+
+    </div>
+
+
+    <button
+        class="btn btn-secondary"
+        onclick="restartQuiz()">
+
+        Responder novamente ↻
+
+    </button>
+
+</div>
+
+</section>
+
+</main>
+
+
+<script>
+
+/* =====================================================
+   CONFIGURAÇÃO
+===================================================== */
+
+const WHATSAPP_NUMBER = "5511983106606";
+
+
+/* =====================================================
+   PERGUNTAS
+===================================================== */
+
+const questions = [
+
+{
+    id:1,
+    text:"Qual cor combina mais com você? 🎨",
+    type:"choice",
+    options:[
+        "Rosa 💗",
+        "Lilás 💜",
+        "Azul 💙",
+        "Verde 🌿",
+        "Amarelo ☀️",
+        "Preto 🖤",
+        "Outra cor"
+    ]
+},
+
+{
+    id:2,
+    text:"Qual comida consegue conquistar seu coração? 🍕",
+    type:"choice",
+    options:[
+        "Pizza 🍕",
+        "Chocolate 🍫",
+        "Sushi 🍣",
+        "Hambúrguer 🍔",
+        "Doce 🧁",
+        "Comida da vó ❤️",
+        "Outra comida"
+    ]
+},
+
+{
+    id:3,
+    text:"Qual música você nunca cansa de ouvir? 🎶",
+    type:"text",
+    placeholder:"Pode ser uma música ou artista..."
+},
+
+{
+    id:4,
+    text:"Qual filme, série ou anime você poderia assistir várias vezes? 🎬",
+    type:"text",
+    placeholder:"Conta aqui..."
+},
+
+{
+    id:5,
+    text:"Se pudesse viajar agora, para onde iria? ✈️",
+    type:"choice",
+    options:[
+        "Praia paradisíaca 🏖️",
+        "Paris 🇫🇷",
+        "Japão 🇯🇵",
+        "Montanhas 🏔️",
+        "Nova York 🗽",
+        "Algum lugar no Brasil 🇧🇷",
+        "Outro destino"
+    ]
+},
+
+{
+    id:6,
+    text:"O que você mais gosta de fazer no seu tempo livre? 🌙",
+    type:"choice",
+    options:[
+        "Ouvir música 🎧",
+        "Assistir algo 📺",
+        "Ler 📖",
+        "Desenhar ou criar 🎨",
+        "Dormir 😴",
+        "Ficar no celular 📱",
+        "Outra coisa"
+    ]
+},
+
+{
+    id:7,
+    text:"O que sempre consegue colocar um sorriso no seu rosto? 😊",
+    type:"text",
+    placeholder:"Pode ser uma coisa simples..."
+},
+
+{
+    id:8,
+    text:"Qual é um sonho que você ainda quer realizar? ✨",
+    type:"text",
+    placeholder:"Pode sonhar alto..."
+},
+
+{
+    id:9,
+    text:"Como seria um dia perfeito para você? 💕",
+    type:"text",
+    placeholder:"Descreve do seu jeitinho..."
+},
+
+{
+    id:10,
+    text:"O que você mais valoriza em uma pessoa? 🌷",
+    type:"choice",
+    options:[
+        "Honestidade 🤝",
+        "Humor 😂",
+        "Carinho 🤗",
+        "Inteligência 🧠",
+        "Lealdade 💖",
+        "Espontaneidade ✨",
+        "Outra qualidade"
+    ]
+},
+
+{
+    id:11,
+    text:"Existe alguma curiosidade sobre você que poucas pessoas sabem? 🌸",
+    type:"text",
+    placeholder:"Só compartilhe se você quiser..."
+},
+
+{
+    id:12,
+    text:"Tem alguma coisa que você gostaria que eu soubesse sobre você? 💌",
+    type:"text",
+    placeholder:"Pode escrever o que quiser..."
+},
+
+{
+    id:13,
+    text:"Qual estação do ano você mais gosta? 🌸",
+    type:"choice",
+    options:[
+        "Verão ☀️",
+        "Outono 🍂",
+        "Inverno ❄️",
+        "Primavera 🌷",
+        "Não tenho uma favorita",
+        "Outra"
+    ]
+},
+
+{
+    id:14,
+    text:"Qual animal você acha mais fofo? 🐾",
+    type:"choice",
+    options:[
+        "Cachorro 🐶",
+        "Gato 🐱",
+        "Coelho 🐰",
+        "Capivara 🦫",
+        "Panda 🐼",
+        "Outro animal"
+    ]
+},
+
+{
+    id:15,
+    text:"Qual tipo de música combina mais com seu humor? 🎧",
+    type:"choice",
+    options:[
+        "Pop 🎤",
+        "Funk 🎶",
+        "Rap 🎙️",
+        "Rock 🎸",
+        "Sertanejo 🤠",
+        "Música calma 🌙",
+        "Outro estilo"
+    ]
+},
+
+{
+    id:16,
+    text:"Você prefere um dia tranquilo ou cheio de aventuras? 🌎",
+    type:"choice",
+    options:[
+        "Dia tranquilo ☕",
+        "Aventura total 🚀",
+        "Um pouco dos dois ✨",
+        "Depende do dia"
+    ]
+},
+
+{
+    id:17,
+    text:"Qual pequeno detalhe consegue deixar seu dia melhor? 🌷",
+    type:"text",
+    placeholder:"Pode ser qualquer coisa..."
+},
+
+{
+    id:18,
+    text:"Se pudesse aprender uma habilidade instantaneamente, qual seria? 🧠",
+    type:"text",
+    placeholder:"O que você escolheria?"
+},
+
+{
+    id:19,
+    text:"Qual lugar você mais gostaria de conhecer algum dia? 🌎",
+    type:"text",
+    placeholder:"Pode ser qualquer lugar..."
+},
+
+{
+    id:20,
+    text:"Quando você precisa relaxar, o que prefere fazer? 🌙",
+    type:"choice",
+    options:[
+        "Ouvir música 🎧",
+        "Assistir alguma coisa 📺",
+        "Dormir 😴",
+        "Conversar com alguém 💬",
+        "Ficar quietinha 🌷",
+        "Sair para algum lugar 🌎",
+        "Outra coisa"
+    ]
+},
+
+{
+    id:21,
+    text:"Qual seria um presente simples que faria você sorrir? 🎁",
+    type:"text",
+    placeholder:"Não precisa ser nada caro..."
+},
+
+{
+    id:22,
+    text:"Você se considera mais tímida ou extrovertida? 😊",
+    type:"choice",
+    options:[
+        "Bem tímida 🌸",
+        "Um pouco tímida 🙈",
+        "Meio termo ✨",
+        "Um pouco extrovertida 😄",
+        "Super extrovertida 🚀",
+        "Depende da pessoa"
+    ]
+},
+
+{
+    id:23,
+    text:"Qual lembrança simples sempre consegue te deixar feliz? 💭",
+    type:"text",
+    placeholder:"Conte apenas o que quiser..."
+},
+
+{
+    id:24,
+    text:"Depois de todas essas perguntas... tem algo que você gostaria de me perguntar? 💌",
+    type:"text",
+    placeholder:"Agora a pergunta pode ser sua..."
+}
+
+];
+
+
+/* =====================================================
+   FRASES
+===================================================== */
+
+const phrases = [
+
+"Foi muito legal descobrir um pouquinho mais sobre você. 💕",
+
+"Acho que ainda existem muitas coisas interessantes para descobrir sobre você... 👀✨",
+
+"Obrigado por dividir um pedacinho do seu mundo comigo. 🌷",
+
+"Agora fiquei com ainda mais curiosidade para te conhecer melhor. 🥰",
+
+"Pequenas respostas também conseguem contar histórias bonitas. 💗"
+
+];
+
+
+/* =====================================================
+   ESTADO
+===================================================== */
+
+let currentIndex = 0;
+let answers = {};
+
+
+/* =====================================================
+   ELEMENTOS
+===================================================== */
+
+const startScreen =
+document.getElementById("startScreen");
+
+const quizScreen =
+document.getElementById("quizScreen");
+
+const finalScreen =
+document.getElementById("finalScreen");
+
+const questionTitle =
+document.getElementById("questionTitle");
+
+const questionContent =
+document.getElementById("questionContent");
+
+const progressFill =
+document.getElementById("progressFill");
+
+const progressLabel =
+document.getElementById("progressLabel");
+
+const progressPercent =
+document.getElementById("progressPercent");
+
+const questionNumber =
+document.getElementById("questionNumber");
+
+const btnBack =
+document.getElementById("btnBack");
+
+const btnNext =
+document.getElementById("btnNext");
+
+const requiredText =
+document.getElementById("requiredText");
+
+const summaryBox =
+document.getElementById("summaryBox");
+
+const randomPhrase =
+document.getElementById("randomPhrase");
+
+
+/* =====================================================
+   CORAÇÕES
+===================================================== */
+
+function createHearts(){
+
+    const container =
+    document.getElementById("hearts");
+
+    const symbols=[
+        "♡",
+        "♥",
+        "💕",
+        "💗",
+        "✨",
+        "🌸"
+    ];
+
+    for(let i=0;i<18;i++){
+
+        const heart =
+        document.createElement("div");
+
+        heart.className="heart";
+
+        heart.textContent =
+        symbols[
+            Math.floor(
+                Math.random()*symbols.length
+            )
+        ];
+
+        heart.style.left =
+        Math.random()*100+"%";
+
+        heart.style.top =
+        20+Math.random()*80+"%";
+
+        heart.style.fontSize =
+        (.7+Math.random()*1.1)+"rem";
+
+        heart.style.animationDuration =
+        (8+Math.random()*10)+"s";
+
+        heart.style.animationDelay =
+        Math.random()*8+"s";
+
+        container.appendChild(heart);
+    }
+}
+
+
+/* =====================================================
+   INICIAR
+===================================================== */
+
+function startQuiz(){
+
+    currentIndex=0;
+    answers={};
+
+    startScreen.classList.remove("active");
+
+    finalScreen.classList.remove("active");
+
+    quizScreen.classList.add("active");
+
+    showQuestion();
+}
+
+
+/* =====================================================
+   DETECTAR "OUTRA"
+===================================================== */
+
+function isOtherOption(option){
+
+    const normalized =
+    option
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g,"")
+    .toLowerCase();
+
+    return normalized.includes("outra") ||
+           normalized.includes("outro");
+}
+
+
+/* =====================================================
+   MOSTRAR PERGUNTA
+===================================================== */
+
+function showQuestion(){
+
+    const q =
+    questions[currentIndex];
+
+    const number =
+    String(currentIndex+1).padStart(2,"0");
+
+    const percent =
+    Math.round(
+        ((currentIndex+1)/questions.length)*100
+    );
+
+    questionNumber.textContent =
+    number;
+
+    progressLabel.textContent =
+    `Pergunta ${currentIndex+1} de ${questions.length}`;
+
+    progressPercent.textContent =
+    `${percent}%`;
+
+    progressFill.style.width =
+    `${percent}%`;
+
+    questionTitle.textContent =
+    q.text;
+
+    questionContent.innerHTML="";
+
+    requiredText.textContent="";
+
+
+    /* =========================
+       ESCOLHAS
+    ========================= */
+
+    if(q.type==="choice"){
+
+        const options =
+        document.createElement("div");
+
+        options.className="options";
+
+        q.options.forEach(option=>{
+
+            const button =
+            document.createElement("button");
+
+            button.type="button";
+
+            button.className="option";
+
+            button.textContent=option;
+
+
+            /*
+                Resposta salva pode ser:
+
+                {
+                    option: "Outra cor",
+                    custom: "Vermelho"
+                }
+
+                ou simplesmente:
+
+                "Rosa 💗"
+            */
+
+            const saved =
+            answers[q.id];
+
+            if(
+                typeof saved==="object" &&
+                saved.option===option
+            ){
+
+                button.classList.add("selected");
+
+            }else if(saved===option){
+
+                button.classList.add("selected");
+
+            }
+
+
+            button.onclick=()=>{
+
+                /*
+                    Remove seleção anterior
+                */
+
+                document
+                .querySelectorAll(".option")
+                .forEach(item=>
+                    item.classList.remove("selected")
+                );
+
+
+                button.classList.add("selected");
+
+
+                /*
+                    Se for "Outra",
+                    cria campo personalizado.
+                */
+
+                if(isOtherOption(option)){
+
+                    answers[q.id]={
+                        option:option,
+                        custom:""
+                    };
+
+                    showCustomInput(q,option);
+
+                }else{
+
+                    answers[q.id]=option;
+
+                    removeCustomInput();
+
+                }
+
+            };
+
+
+            options.appendChild(button);
+
+        });
+
+
+        questionContent.appendChild(options);
+
+
+        /*
+            Se já havia uma resposta "Outra",
+            recria o campo.
+        */
+
+        const saved =
+        answers[q.id];
+
+        if(
+            saved &&
+            typeof saved==="object" &&
+            saved.option &&
+            saved.custom!==undefined
+        ){
+
+            showCustomInput(
+                q,
+                saved.option,
+                saved.custom
+            );
+
+        }
+
+
+        requiredText.textContent =
+        "Escolha uma opção para continuar 💕";
+
+    }
+
+
+    /* =========================
+       TEXTO
+    ========================= */
+
+    else{
+
+        const textarea =
+        document.createElement("textarea");
+
+        textarea.className="text-input";
+
+        textarea.placeholder =
+        q.placeholder || "Escreva aqui...";
+
+        textarea.value =
+        answers[q.id] || "";
+
+        textarea.addEventListener(
+            "input",
+            event=>{
+                answers[q.id] =
+                event.target.value.trim();
+            }
+        );
+
+        questionContent.appendChild(
+            textarea
+        );
+
+        setTimeout(
+            ()=>textarea.focus(),
+            100
+        );
+
+    }
+
+
+    btnBack.style.visibility =
+    currentIndex===0
+    ? "hidden"
+    : "visible";
+
+
+    btnNext.textContent =
+    currentIndex===questions.length-1
+    ? "Finalizar ✨"
+    : "Próxima 💕";
+}
+
+
+/* =====================================================
+   CAMPO "OUTRA"
+===================================================== */
+
+function showCustomInput(
+    question,
+    option,
+    existingValue=""
+){
+
+    removeCustomInput();
+
+
+    const wrapper =
+    document.createElement("div");
+
+    wrapper.className=
+    "custom-answer";
+
+    const label =
+    document.createElement("label");
+
+    label.className=
+    "custom-label";
+
+    label.textContent =
+    getCustomLabel(option);
+
+
+    const input =
+    document.createElement("input");
+
+    input.type="text";
+
+    input.className=
+    "custom-input";
+
+    input.placeholder =
+    getCustomPlaceholder(option);
+
+    input.value =
+    existingValue;
+
+
+    input.addEventListener(
+        "input",
+        event=>{
+
+            answers[question.id]={
+                option:option,
+                custom:event.target.value.trim()
+            };
+
+        }
+    );
+
+
+    wrapper.appendChild(label);
+
+    wrapper.appendChild(input);
+
+    questionContent.appendChild(wrapper);
+
+    setTimeout(
+        ()=>input.focus(),
+        100
+    );
+}
+
+
+/* =====================================================
+   LABEL PERSONALIZADO
+===================================================== */
+
+function getCustomLabel(option){
+
+    const text =
+    option.toLowerCase();
+
+    if(text.includes("cor"))
+        return "Qual cor? 🎨";
+
+    if(text.includes("comida"))
+        return "Qual comida? 🍴";
+
+    if(text.includes("destino"))
+        return "Para onde você iria? ✈️";
+
+    if(text.includes("qualidade"))
+        return "Qual qualidade? 🌷";
+
+    if(text.includes("animal"))
+        return "Qual animal? 🐾";
+
+    if(text.includes("estilo"))
+        return "Qual estilo? 🎶";
+
+    if(text.includes("coisa"))
+        return "Qual seria? ✨";
+
+    return "Conta qual! 💕";
+}
+
+
+function getCustomPlaceholder(option){
+
+    const text =
+    option.toLowerCase();
+
+    if(text.includes("cor"))
+        return "Ex.: vermelho, branco...";
+
+    if(text.includes("comida"))
+        return "Qual comida você escolheria?";
+
+    if(text.includes("destino"))
+        return "Qual lugar você escolheria?";
+
+    if(text.includes("qualidade"))
+        return "Qual qualidade você mais valoriza?";
+
+    if(text.includes("animal"))
+        return "Qual animal?";
+
+    if(text.includes("estilo"))
+        return "Qual estilo musical?";
+
+    return "Escreva sua resposta...";
+}
+
+
+/* =====================================================
+   REMOVER CAMPO PERSONALIZADO
+===================================================== */
+
+function removeCustomInput(){
+
+    const old =
+    document.querySelector(".custom-answer");
+
+    if(old)
+        old.remove();
+}
+
+
+/* =====================================================
+   VALIDAR "OUTRA"
+===================================================== */
+
+function validateAnswer(q){
+
+    const answer =
+    answers[q.id];
+
+    if(q.type==="choice"){
+
+        if(!answer)
+            return false;
+
+
+        if(
+            typeof answer==="object"
+        ){
+
+            return Boolean(
+                answer.custom &&
+                answer.custom.trim()
+            );
+
+        }
+
+        return true;
+    }
+
+    return true;
+}
+
+
+/* =====================================================
+   PRÓXIMA
+===================================================== */
+
+function nextQuestion(){
+
+    const q =
+    questions[currentIndex];
+
+
+    /*
+        Salva textarea atual
+    */
+
+    if(q.type==="text"){
+
+        const input =
+        document.querySelector(".text-input");
+
+        if(input){
+
+            answers[q.id]=
+            input.value.trim();
+
+        }
+
+    }
+
+
+    /*
+        Validação
+    */
+
+    if(!validateAnswer(q)){
+
+        const target =
+        document.querySelector(
+            ".options,.custom-answer"
+        );
+
+        if(target){
+
+            target.classList.remove("shake");
+
+            void target.offsetWidth;
+
+            target.classList.add("shake");
+
+        }
+
+        requiredText.textContent =
+        "Escolha uma opção e preencha o campo 💗";
+
+        return;
+    }
+
+
+    /*
+        Avança
+    */
+
+    if(
+        currentIndex <
+        questions.length-1
+    ){
+
+        currentIndex++;
+
+        showQuestion();
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }else{
+
+        showFinal();
+
+    }
+
+}
+
+
+/* =====================================================
+   VOLTAR
+===================================================== */
+
+function prevQuestion(){
+
+    const q =
+    questions[currentIndex];
+
+
+    if(q.type==="text"){
+
+        const input =
+        document.querySelector(".text-input");
+
+        if(input)
+            answers[q.id]=
+            input.value.trim();
+
+    }
+
+
+    if(currentIndex>0){
+
+        currentIndex--;
+
+        showQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   TEXTO DA RESPOSTA
+===================================================== */
+
+function getAnswerText(answer){
+
+    if(!answer)
+        return "(sem resposta)";
+
+
+    if(
+        typeof answer==="object"
+    ){
+
+        if(answer.custom)
+            return `${answer.option}: ${answer.custom}`;
+
+        return answer.option;
+    }
+
+
+    return answer;
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+function showFinal(){
+
+    quizScreen.classList.remove("active");
+
+    finalScreen.classList.add("active");
+
+
+    randomPhrase.textContent =
+    phrases[
+        Math.floor(
+            Math.random()*phrases.length
+        )
+    ];
+
+
+    summaryBox.innerHTML="";
+
+
+    questions.forEach(q=>{
+
+        const item =
+        document.createElement("div");
+
+        item.className=
+        "summary-item";
+
+
+        const question =
+        document.createElement("div");
+
+        question.className=
+        "summary-q";
+
+        question.textContent=
+        q.text;
+
+
+        const answer =
+        document.createElement("div");
+
+        answer.className=
+        "summary-a";
+
+        answer.textContent=
+        getAnswerText(
+            answers[q.id]
+        );
+
+
+        item.appendChild(question);
+
+        item.appendChild(answer);
+
+        summaryBox.appendChild(item);
+
+    });
+
+
+    createConfetti();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   CONFETES
+===================================================== */
+
+function createConfetti(){
+
+    const pieces=[
+        "💕",
+        "💗",
+        "💖",
+        "✨",
+        "🌸",
+        "💜"
+    ];
+
+
+    for(let i=0;i<30;i++){
+
+        const piece =
+        document.createElement("div");
+
+        piece.className=
+        "confetti";
+
+        piece.textContent=
+        pieces[
+            Math.floor(
+                Math.random()*pieces.length
+            )
+        ];
+
+        piece.style.left =
+        Math.random()*100+"vw";
+
+        piece.style.top =
+        (-20-Math.random()*100)+"px";
+
+        piece.style.animationDelay =
+        Math.random()+ "s";
+
+        piece.style.fontSize =
+        (12+Math.random()*13)+"px";
+
+        document.body.appendChild(piece);
+
+
+        setTimeout(
+            ()=>piece.remove(),
+            3500
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+function sendToWhatsApp(){
+
+    let message =
+    "💕 Um pouquinho mais sobre a Isabelly 💕\n\n";
+
+
+    questions.forEach(q=>{
+
+        const answer =
+        getAnswerText(
+            answers[q.id]
+        );
+
+
+        message +=
+        `${q.text}\n${answer}\n\n`;
+
+    });
+
+
+    message +=
+    "💌 Respostas compartilhadas com carinho ✨";
+
+
+    const url =
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+/* =====================================================
+   REINICIAR
+===================================================== */
+
+function restartQuiz(){
+
+    currentIndex=0;
+
+    answers={};
+
+    finalScreen.classList.remove("active");
+
+    quizScreen.classList.remove("active");
+
+    startScreen.classList.add("active");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   INICIALIZAÇÃO
+===================================================== */
+
+createHearts();
+
+</script>
+
+</body>
+</html>
